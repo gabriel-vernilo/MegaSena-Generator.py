@@ -1,14 +1,11 @@
 #Gerador de jogos na Mega -
 
-import random as r
-
-# a=b a=c a=d a=e a=f b=c b=d b=e b=f c=d c=e c=f d=e d=f e=f    :::: possibilidades
+from random import randint
 
 qtd = int(input("Quantos jogos você quer fazer ?\n"))
-feitos = 0
-while feitos < qtd :
-    a,b,c,d,e,f = r.randint(1, 60),r.randint(1, 60),r.randint(1, 60),r.randint(1, 60),r.randint(1, 60),r.randint(1, 60)
-    while a == b or a==c or a==d or a==e or a==f or b==c or b==d or b==e or b==f or c==d or c==e or c==f or d==e or d==f or e==f: #nao repetir na mesma linha
-        a,b,c,d,e,f = r.randint(1, 60),r.randint(1, 60),r.randint(1, 60),r.randint(1, 60),r.randint(1, 60),r.randint(1, 60)
-    print(a, b, c, d, e, f)
-    feitos += 1
+for _ in range(qtd):
+    itens_combinados = [randint(1, 60) for _ in range(6)]
+    while len(itens_combinados) != len(set(itens_combinados)): #nao repetir na mesma linha
+        itens_combinados = [randint(1, 60) for _ in range(6)]
+    a,b,c,d,e,f = sorted([f"{n:02d}" for n in itens_combinados]) #sorted(), para ficar em ordem crescente assim como no jogo. {n:02d}, para adicionar 0 se n < 10.
+    print(a,b,c,d,e,f)

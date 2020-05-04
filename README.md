@@ -13,6 +13,4 @@ python ./MegaSena.py
 result:
 
 
-![Screenshot_3](https://user-images.githubusercontent.com/53917092/79046396-1b114580-7be7-11ea-816a-d3abf6fadc70.png)
-
-
+!](https://imgur.com/CXlX29d)
